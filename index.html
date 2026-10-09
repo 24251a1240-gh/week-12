@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruthvika | Portfolio</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 9%;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px #00000008;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #2563eb;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #475569;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        /* Hero section */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 70px 9%;
+            background: linear-gradient(135deg, #eff6ff, #ffffff);
+        }
+
+        .hero-content {
+            max-width: 760px;
+        }
+
+        .tag {
+            display: inline-block;
+            color: #2563eb;
+            background: #dbeafe;
+            padding: 7px 15px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 22px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: #0f172a;
+        }
+
+        h1 span {
+            color: #2563eb;
+        }
+
+        .hero p {
+            max-width: 620px;
+            color: #64748b;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-right: 10px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: white;
+            color: #2563eb;
+            border: 1px solid #2563eb;
+        }
+
+        .btn-outline:hover {
+            color: white;
+        }
+
+        /* General sections */
+        section {
+            padding: 80px 9%;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            color: #64748b;
+            margin-bottom: 35px;
+        }
+
+        .about-text {
+            max-width: 850px;
+            color: #475569;
+        }
+
+        /* Skills */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            background: white;
+            border: 1px solid #e2e8f0;
+            padding: 10px 17px;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            padding: 27px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px #0f172a0d;
+            border-color: #bfdbfe;
+        }
+
+        .card h3 {
+            color: #0f172a;
+            font-size: 19px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .card .type {
+            color: #2563eb;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .card a {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Contact */
+        .contact {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact p {
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .contact a {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #020617;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 700px) {
+            nav {
+                padding: 16px 5%;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 13px;
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+
+            .hero, section {
+                padding: 55px 6%;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+
+            .section-title {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Ruthvika.</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <span class="tag">B.Tech IT Student | Aspiring Software Engineer</span>
+
+            <h1>Hi, I'm <span>Ruthvika</span>.<br>
+                I build things for the web.</h1>
+
+            <p>
+                I'm an Information Technology student passionate about
+                software development, problem-solving, and building
+                practical technology solutions.
+            </p>
+
+            <a href="#projects" class="btn">Explore My Work</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">A little introduction</p>
+
+        <p class="about-text">
+            I am a third-year B.Tech Information Technology student
+            interested in web development, software engineering, and
+            Internet of Things (IoT). I enjoy learning new technologies,
+            solving coding problems, and collaborating with others to
+            develop useful applications. I am continuously improving
+            my technical skills through projects and hands-on experience.
+        </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" style="background: #f1f5f9;">
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-subtitle">Technologies I work with</p>
+
+        <div class="skills">
+            <span class="skill">Java</span>
+            <span class="skill">Python</span>
+            <span class="skill">C</span>
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">React.js</span>
+            <span class="skill">Node.js</span>
+            <span class="skill">Express.js</span>
+            <span class="skill">SQL</span>
+            <span class="skill">MongoDB</span>
+            <span class="skill">Data Structures & Algorithms</span>
+            <span class="skill">Git & GitHub</span>
+            <span class="skill">ESP32 & IoT</span>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <h2 class="section-title">Experience</h2>
+        <p class="section-subtitle">My practical learning journey</p>
+
+        <div class="cards">
+            <div class="card">
+                <div class="type">Internship · July–August 2026</div>
+                <h3>Web Development Intern</h3>
+                <p><strong>SkillCraft Technology</strong></p>
+                <p>
+                    Gained hands-on experience with web technologies
+                    and application development by completing practical
+                    tasks and projects.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" style="background: #f1f5f9;">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Some things I've been working on</p>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="type">Web Development</div>
+                <h3>YouTube Focus Extension</h3>
+                <p>
+                    A Chrome extension designed to support distraction-free
+                    studying through focus timers, website blocking,
+                    desktop notifications, and session tracking.
+                </p>
+                <a href="https://github.com/" target="_blank"
+                   rel="noopener noreferrer">GitHub Profile →</a>
+            </div>
+
+            <div class="card">
+                <div class="type">Internet of Things</div>
+                <h3>WashNova</h3>
+                <p>
+                    A proposed smart add-on for washing machines that
+                    aims to detect metallic objects, identify colour
+                    mixing risks, recommend detergent, and monitor load weight.
+                </p>
+                <a href="#contact">Know More →</a>
+            </div>
+
+            <div class="card">
+                <div class="type">Innovation Project</div>
+                <h3>Smart Wearable for Elderly Care</h3>
+                <p>
+                    A wearable concept for health monitoring, fall
+                    detection, and emergency alerts to help improve
+                    elderly safety.
+                </p>
+                <a href="#contact">Know More →</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Let's Connect</h2>
+        <p>
+            I'm interested in software development opportunities,
+            internships, and collaborating on meaningful projects.
+        </p>
+
+        <p>
+            Email:
+            <a href="mailto:yourmail@example.com">
+                yourmail@example.com
+            </a>
+        </p>
+
+        <p>
+            <a href="https://www.linkedin.com/" target="_blank"
+               rel="noopener noreferrer">LinkedIn</a>
+            &nbsp; | &nbsp;
+            <a href="https://github.com/" target="_blank"
+               rel="noopener noreferrer">GitHub</a>
+            &nbsp; | &nbsp;
+            <a href="https://leetcode.com/" target="_blank"
+               rel="noopener noreferrer">LeetCode</a>
+        </p>
+
+        <a href="mailto:yourmail@example.com" class="btn">
+            Get In Touch
+        </a>
+    </section>
+
+    <footer>
+        <p>© 2026 Ruthvika. Built with HTML, CSS & JavaScript.</p>
+    </footer>
+
+</body>
+</html>
